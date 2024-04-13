@@ -1,0 +1,13 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+  #instance:
+    #hostname: localhost
+    #preferIpAddress: true
+spring:
+  application:
+    name: NETFLIX-EUREKA-SERVER (swiggy-service-registry)
+    
+server:
+  port: 8761

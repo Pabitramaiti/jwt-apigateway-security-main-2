@@ -1,0 +1,548 @@
+{
+	"info": {
+		"_postman_id": "48c4e55a-e455-4e15-b944-97dcd87d3e7c",
+		"name": "Microservices Security Using JWT-Spring Cloud  Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "468713"
+	},
+	"item": [
+		{
+			"name": "createuser-direct",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Pabitra\",\r\n    \"password\" : \"Pwd1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9898/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9898",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generateToken-direct",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Pabitra\",\r\n    \"password\": \"Pwd1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9898/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9898",
+					"path": [
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createuser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Pabitra\",\r\n    \"password\" : \"Pwd1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generateToken",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Pabitra\",\r\n    \"password\": \"Pwd1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validateToken-direct",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9898/auth/validate?token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWJpdHJhIiwiaWF0IjoxNzEyODUxNjE4LCJleHAiOjE3MTI4NTM0MTh9.QHs8FZSOsJc9pyQGQzCC_QHMaX3mX1DtqOam8lWBJTQ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9898",
+					"path": [
+						"auth",
+						"validate"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWJpdHJhIiwiaWF0IjoxNzEyODUxNjE4LCJleHAiOjE3MTI4NTM0MTh9.QHs8FZSOsJc9pyQGQzCC_QHMaX3mX1DtqOam8lWBJTQ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validateToken",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/auth/validate?token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWJpdHJhIiwiaWF0IjoxNzEyODM4MTA4LCJleHAiOjE3MTI4Mzk5MDh9.iJcddpyGmUC9k7WV9F0dbws-H3GYDn3MWTGKIPQ_O_k",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"validate"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWJpdHJhIiwiaWF0IjoxNzEyODM4MTA4LCJleHAiOjE3MTI4Mzk5MDh9.iJcddpyGmUC9k7WV9F0dbws-H3GYDn3MWTGKIPQ_O_k"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swiggy-greetingMessage-direct",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/swiggy/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"swiggy",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swiggy-checkOrderStatus-direct",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/swiggy/35fds631",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"swiggy",
+						"35fds631"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swiggy-greetingMessage",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWJpdHJhIiwiaWF0IjoxNzEyODUwNjgyLCJleHAiOjE3MTI4NTI0ODJ9.FunwgMe82DejN2QSmufbeogUKIliLHQN7jR6EJnxzx4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/swiggy/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"swiggy",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swiggy-checkOrderStatus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWJpdHJhIiwiaWF0IjoxNzEzMDAwOTI0LCJleHAiOjE3MTMwMDI3MjR9.n4jHcfam4tZQpOKNLKuESobbxDeDfHcr3Q_h2SHEyAE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/swiggy/35fds631",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"swiggy",
+						"35fds631"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurant-greetingMessage-direct",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/restaurant/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"restaurant",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurant-getOrder-direct",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/restaurant/orders/status/35fds631",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"restaurant",
+						"orders",
+						"status",
+						"35fds631"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurant-greetingMessage",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWJpdHJhIiwiaWF0IjoxNzEyODUwNjgyLCJleHAiOjE3MTI4NTI0ODJ9.FunwgMe82DejN2QSmufbeogUKIliLHQN7jR6EJnxzx4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/restaurant/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"restaurant",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurant-getOrder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWJpdHJhIiwiaWF0IjoxNzEyODUwNjgyLCJleHAiOjE3MTI4NTI0ODJ9.FunwgMe82DejN2QSmufbeogUKIliLHQN7jR6EJnxzx4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/restaurant/orders/status/35fds631",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"restaurant",
+						"orders",
+						"status",
+						"35fds631"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

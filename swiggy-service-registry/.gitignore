@@ -1,0 +1,30 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+
+# Eclipse
+#.classpath
+#.project
+.settings/
+
+# Maven
+log/
+target/
+
+### STS ###
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+.attach_pid*
+
+push.sh
+
+#Node Modules
+node_modules
+dist
+test-coverage
+.husky
