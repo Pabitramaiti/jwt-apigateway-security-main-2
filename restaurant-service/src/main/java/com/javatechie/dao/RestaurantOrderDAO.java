@@ -24,7 +24,7 @@ public class RestaurantOrderDAO {
     }
 
     public static void main(String[] args) {
-        System.out.println("hyderabadi dum biryani".toUpperCase());
+        System.out.println("Hyderabadi dum biryani".toUpperCase());
     }
 
 

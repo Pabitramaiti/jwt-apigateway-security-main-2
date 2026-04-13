@@ -1,10 +1,11 @@
 package com.javatechie.service;
 
-import com.javatechie.entity.UserCredential;
-import com.javatechie.repository.UserCredentialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import com.javatechie.entity.UserCredential;
+import com.javatechie.repository.UserCredentialRepository;
 
 @Service
 public class AuthService {

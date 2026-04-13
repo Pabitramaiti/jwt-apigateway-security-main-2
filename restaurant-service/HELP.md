@@ -22,3 +22,18 @@ The following guides illustrate how to use some features concretely:
 * [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
 * [Service Registration and Discovery with Eureka and Spring Cloud](https://spring.io/guides/gs/service-registration-and-discovery/)
 
+### Insert data into usercredential table
+
+insert into usercredential values (3,'sagar.chahan@gmail.com','Sagar Chahan','sagar');
+insert into usercredential values (1,'pabitram.mail@gmail.com','Pabitra Maiti','Asmita@14');
+insert into usercredential values (2,'asmita.maiti@gmail.com','Asmita Maiti','Asmita@2014');
+insert into usercredential values (4,'ravi.varma@gmail.com','Ravi Varma','Ravi@varma');
+
+### Swiggy-App Direct Endpoint url
+GET: http://localhost:8081/swiggy/home
+GET: http://localhost:8081/swiggy/10
+  --header 'loggedInUser: sagar'
+
+### Restaurant-App Endpoint url (Data are hard coded in RestaurantOrderDAO.java)
+GET: http://localhost:8082/restaurant/home
+GET: http://localhost:8082/restaurant/orders/status/35fds631
