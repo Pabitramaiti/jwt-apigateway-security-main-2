@@ -2,12 +2,15 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-  #instance:
-    #hostname: localhost
+  instance:
+    hostname: localhost
     #preferIpAddress: true
+    prefer-ip-address: true
+  server:
+    enable-self-preservation: true # Use only for local development/testing. Do not disable it in production.
 spring:
   application:
-    name: NETFLIX-EUREKA-SERVER (swiggy-service-registry)
+    name: NETFLIX-EUREKA-SERVER (service-registry)
     
 server:
   port: 8761

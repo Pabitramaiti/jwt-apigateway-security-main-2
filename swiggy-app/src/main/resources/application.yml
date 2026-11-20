@@ -4,8 +4,19 @@ server:
 spring:
   application:
     name: SWIGGY-APP
+    version: "@project.version@"
+    title: "@project.name@"
+  #cloud:
+    #loadbalancer:
+      #retry:
+        #enabled: true
 
 eureka:
   client:
     service-url:
       defaultZone : http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true   # tells Eureka to use IP instead of hostname
+    #ip-address: 192.168.29.218 # optional: explicitly set IP if auto-detection fails
+    #hostname: ${HOSTNAME}   # If running inside Docker, optional, but usually overridden by prefer-ip-address
+    #ip-address: ${POD_IP}  #If running in Kubernetes

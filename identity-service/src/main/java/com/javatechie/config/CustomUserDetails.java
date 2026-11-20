@@ -1,18 +1,20 @@
 package com.javatechie.config;
 
-import com.javatechie.entity.UserCredential;
+import java.util.Collection;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
+import com.javatechie.entity.UserCredential;
 
 public class CustomUserDetails implements UserDetails {
 
-    private String username;
+    private static final long serialVersionUID = 1L;
+	private String username;
     private String password;
 
     public CustomUserDetails(UserCredential userCredential) {
-        this.username = userCredential.getName();
+        this.username = userCredential.getUsername();
         this.password = userCredential.getPassword();
     }
 

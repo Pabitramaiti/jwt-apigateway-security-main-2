@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: RESTAURANT-SERVICE
+    version: "@project.version@"
+    title: "@project.name@"
 
 eureka:
   client:

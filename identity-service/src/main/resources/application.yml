@@ -1,6 +1,25 @@
+server:
+  port: 9898
+
 spring:
   application:
     name: IDENTITY-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/javatechie?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 eureka:
   client:
@@ -8,5 +27,3 @@ eureka:
       defaultZone : http://localhost:8761/eureka/
 
 
-server:
-  port: 9898

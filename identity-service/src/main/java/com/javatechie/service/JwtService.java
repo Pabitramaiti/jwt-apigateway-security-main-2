@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 
@@ -31,9 +30,17 @@ public class JwtService {
 	}
 
 	private String createToken(Map<String, Object> claims, String userName) {
-		return Jwts.builder().claims(claims).subject(userName).issuedAt(new Date(System.currentTimeMillis()))
-				.expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30)) // 30 minutes
-				.signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
+//		return Jwts.builder().claims(claims).subject(userName).issuedAt(new Date(System.currentTimeMillis()))
+//				.expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30)) // 30 minutes
+//				.signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
+		return Jwts.builder()
+                .claims(claims)
+                .subject(userName)
+                .issuedAt(new Date(System.currentTimeMillis()))
+                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30)) // 30 minutes
+                .signWith(getSignKey())   // algorithm inferred from key
+                .compact();
+
 	}
 
 	private SecretKey getSignKey() {

@@ -1,29 +1,35 @@
 spring:
- cloud:
-   gateway:
-     routes:
-       - id: swiggy-app
-         uri: lb://SWIGGY-APP
-         predicates:
-           - Path=/swiggy/**
-         filters:
-           - AuthenticationFilter
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+           - id: swiggy-app
+             uri: lb://SWIGGY-APP
+             predicates:
+               - Path=/swiggy/**
+             filters:
+               - AuthenticationFilter
 
+           - id: restaurant-service
+             uri: lb://RESTAURANT-SERVICE
+             predicates:
+               - Path=/restaurant/**
+             filters:
+               - AuthenticationFilter
 
-       - id: restaurant-service
-         uri: lb://RESTAURANT-SERVICE
-         predicates:
-           - Path=/restaurant/**
-         filters:
-           - AuthenticationFilter
+           - id: identity-service
+             uri: lb://IDENTITY-SERVICE
+             predicates:
+               - Path=/auth/**
 
-       - id: identity-service
-         uri: lb://IDENTITY-SERVICE
-         predicates:
-           - Path=/auth/**
+          discovery:
+            locator:
+              enabled: true   # allows dynamic routing via Eureka
+              lower-case-service-id: true
 
- application:
-   name: SWIGGY-GATEWAY
+  application:
+    name: SWIGGY-GATEWAY
 
 eureka:
   client:
